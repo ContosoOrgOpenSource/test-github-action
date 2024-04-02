@@ -1,0 +1,16 @@
+name: Test Reusable Workflow
+
+on:
+  workflow_dispatch
+  
+jobs:
+  ReusableWorkflowCaller:
+    uses: ContosoOrgOpenSource/hello-world-java-action/.github/workflows/manual.yml@main
+    with:
+      who-to-greet: 'Mona the Octocat 2'
+  UseOutputfromReusableWorkflow:
+    runs-on: ubuntu-latest
+    needs: ReusableWorkflowCaller
+    steps:
+    - run: echo random-number ${{ steps.hello.outputs.random-number }}
+      shell: bash
