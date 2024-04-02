@@ -12,5 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: ReusableWorkflowCaller
     steps:
-    - run: echo random-number ${{ steps.hello.outputs.random-number }}
-      shell: bash
+      - uses: actions/checkout@v4.1.1
+      - run: echo random-number ${{ needs.ReusableWorkflowCaller.outputs.random-number }}
+        shell: bash
