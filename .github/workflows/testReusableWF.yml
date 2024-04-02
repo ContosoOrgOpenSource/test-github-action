@@ -8,10 +8,10 @@ jobs:
     uses: ContosoOrgOpenSource/hello-world-java-action/.github/workflows/manual.yml@main
     with:
       name: 'Mona the Octocat 2'
-  UseOutputfromReusableWorkflow:
-    runs-on: ubuntu-latest
-    needs: ReusableWorkflowCaller
-    steps:
-      - uses: actions/checkout@v4.1.1
-      - run: echo random-number ${{ needs.ReusableWorkflowCaller.outputs.random-number }}
-        shell: bash
+#  UseOutputfromReusableWorkflow:
+#    runs-on: ubuntu-latest
+#    needs: ReusableWorkflowCaller
+#    steps:
+#      - uses: actions/checkout@v4.1.1
+#      - run: echo random-number ${{ needs.ReusableWorkflowCaller.outputs.random-number }}
+#        shell: bash
