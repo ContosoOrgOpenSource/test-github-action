@@ -5,7 +5,7 @@ on:
   
 jobs:
   ReusableWorkflowCaller:
-    uses: ContosoOrgOpenSource/hello-world-java-action/.github/workflows/manual.yml@main
+    uses: ContosoOrgOpenSource/hello-world-java-action@main
     with:
       name: 'Mona the Octocat 2'
 #  UseOutputfromReusableWorkflow:
