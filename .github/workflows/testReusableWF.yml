@@ -3,15 +3,16 @@ name: Test Reusable Workflow
 on:
   workflow_dispatch
   
-jobs:
-  ReusableWorkflowCaller:
-    uses: ContosoOrgOpenSource/hello-world-java-action@main
-    with:
-      name: 'Mona the Octocat 2'
-#  UseOutputfromReusableWorkflow:
-#    runs-on: ubuntu-latest
-#    needs: ReusableWorkflowCaller
-#    steps:
-#      - uses: actions/checkout@v4.1.1
-#      - run: echo random-number ${{ needs.ReusableWorkflowCaller.outputs.random-number }}
-#        shell: bash
+  build:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: hello
+        uses: ContosoOrgOpenSource/hello-world-java-action@main
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.hello.outputs.random-number }}
+        shell: bash
