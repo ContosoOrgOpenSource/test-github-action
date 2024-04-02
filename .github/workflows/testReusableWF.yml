@@ -7,7 +7,7 @@ jobs:
   ReusableWorkflowCaller:
     uses: ContosoOrgOpenSource/hello-world-java-action/.github/workflows/manual.yml@main
     with:
-      name: 'Mona the Octocat 2'
+      who-to-greet: 'Mona the Octocat 2'
 #  UseOutputfromReusableWorkflow:
 #    runs-on: ubuntu-latest
 #    needs: ReusableWorkflowCaller
