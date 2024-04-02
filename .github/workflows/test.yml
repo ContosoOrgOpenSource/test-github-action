@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: hello
-        uses: sormuras/hello-world-java-action@v1
+        uses: ContosoOrgOpenSource/hello-world-java-action/.github/workflows/manual.yml@main
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Mona the Octocat 2'
       - run: echo random-number ${{ steps.hello.outputs.random-number }}
         shell: bash
