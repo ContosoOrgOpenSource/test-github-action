@@ -1,4 +1,4 @@
-name: Notify on new issue
+name: Test Action
 
 on:
   workflow_dispatch
